@@ -2,6 +2,15 @@
   "version": 3,
   "targets": {
     "net8.0": {
+      "dotenv.net/3.2.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/dotenv.net.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/dotenv.net.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.OpenApi/8.0.11": {
         "type": "package",
         "dependencies": {
@@ -137,6 +146,21 @@
     }
   },
   "libraries": {
+    "dotenv.net/3.2.1": {
+      "sha512": "2fc2s5PH6wAoWQ8bpyVgz28y9qMs/t8ToiCKqSM6mWpjgg4QQSPtZ0nia0x/OebGLSDbxyOelVH+fULZH7N4mA==",
+      "type": "package",
+      "path": "dotenv.net/3.2.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "dotenv.net.3.2.1.nupkg.sha512",
+        "dotenv.net.nuspec",
+        "lib/netstandard1.6/dotenv.net.dll",
+        "lib/netstandard2.0/dotenv.net.dll",
+        "lib/netstandard2.1/dotenv.net.dll"
+      ]
+    },
     "Microsoft.AspNetCore.OpenApi/8.0.11": {
       "sha512": "1WCvCZpqvOAyul6upSJ8Rkb/QHdr4PLrDny26vFexya/nTkG3x2zt8j9qlJ5T3J+/yJD9KwlGKhho9ZDD/YiFA==",
       "type": "package",
@@ -561,7 +585,8 @@
       "Microsoft.AspNetCore.OpenApi >= 8.0.11",
       "Newtonsoft.Json >= 13.0.3",
       "RestSharp >= 112.1.0",
-      "Swashbuckle.AspNetCore >= 6.6.2"
+      "Swashbuckle.AspNetCore >= 6.6.2",
+      "dotenv.net >= 3.2.1"
     ]
   },
   "packageFolders": {
@@ -583,7 +608,6 @@
         "net8.0"
       ],
       "sources": {
-        "/home/bayu-budianto/.dotnet/library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -596,13 +620,7 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "all"
-      },
-      "SdkAnalysisLevel": "9.0.100"
+      }
     },
     "frameworks": {
       "net8.0": {
@@ -623,6 +641,10 @@
           "Swashbuckle.AspNetCore": {
             "target": "Package",
             "version": "[6.6.2, )"
+          },
+          "dotenv.net": {
+            "target": "Package",
+            "version": "[3.2.1, )"
           }
         },
         "imports": [
@@ -644,7 +666,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/home/bayu-budianto/.dotnet/sdk/9.0.100/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.112/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

@@ -31,3 +31,7 @@
 /home/bayu-budianto/RiderProjects/ChatBotAI/ChatBotAI/obj/Debug/net8.0/ChatBotAI.pdb
 /home/bayu-budianto/RiderProjects/ChatBotAI/ChatBotAI/obj/Debug/net8.0/ChatBotAI.genruntimeconfig.cache
 /home/bayu-budianto/RiderProjects/ChatBotAI/ChatBotAI/obj/Debug/net8.0/ref/ChatBotAI.dll
+/home/bayu-budianto/RiderProjects/ChatBotAI/ChatBotAI/bin/Debug/net8.0/dotenv.net.dll
+/home/bayu-budianto/RiderProjects/ChatBotAI/ChatBotAI/bin/Debug/net8.0/Newtonsoft.Json.dll
+/home/bayu-budianto/RiderProjects/ChatBotAI/ChatBotAI/bin/Debug/net8.0/RestSharp.dll
+/home/bayu-budianto/RiderProjects/ChatBotAI/ChatBotAI/obj/Debug/net8.0/ChatBotAI.sourcelink.json
