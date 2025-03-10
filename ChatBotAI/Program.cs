@@ -1,8 +1,12 @@
+using ChatBotAI.Services.ChatAppService;
 using ChatBotAI.Services.ChatbotAppService;
+using ChatBotAI.Services.FileUploadAppService;
+using ChatBotAI.Services.WeaviateAppService;
 using Microsoft.AspNetCore.Http.Features;
 using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
+
 
 // Add services to the container.
 builder.Services.AddControllers(); // Add Controllers
@@ -11,6 +15,9 @@ builder.Services.AddSwaggerGen();
 
 // Register custom service
 builder.Services.AddSingleton<IChatbotAppService, ChatbotAppService>();
+builder.Services.AddSingleton<IChatAppService, ChatAppService>();
+builder.Services.AddSingleton<IWeaviateAppService, WeaviateAppService>();
+builder.Services.AddSingleton<IFileUploadAppService, FileUploadAppService>();
 
 builder.Services.AddSwaggerGen(c =>
 {

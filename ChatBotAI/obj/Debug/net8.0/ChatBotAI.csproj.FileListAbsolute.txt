@@ -35,3 +35,10 @@
 /home/bayu-budianto/RiderProjects/ChatBotAI/ChatBotAI/bin/Debug/net8.0/Newtonsoft.Json.dll
 /home/bayu-budianto/RiderProjects/ChatBotAI/ChatBotAI/bin/Debug/net8.0/RestSharp.dll
 /home/bayu-budianto/RiderProjects/ChatBotAI/ChatBotAI/obj/Debug/net8.0/ChatBotAI.sourcelink.json
+/home/bayu-budianto/RiderProjects/ChatBotAI/ChatBotAI/bin/Debug/net8.0/DnsClient.dll
+/home/bayu-budianto/RiderProjects/ChatBotAI/ChatBotAI/bin/Debug/net8.0/MongoDB.Bson.dll
+/home/bayu-budianto/RiderProjects/ChatBotAI/ChatBotAI/bin/Debug/net8.0/MongoDB.Driver.dll
+/home/bayu-budianto/RiderProjects/ChatBotAI/ChatBotAI/bin/Debug/net8.0/SharpCompress.dll
+/home/bayu-budianto/RiderProjects/ChatBotAI/ChatBotAI/bin/Debug/net8.0/Snappier.dll
+/home/bayu-budianto/RiderProjects/ChatBotAI/ChatBotAI/bin/Debug/net8.0/ZstdSharp.dll
+/home/bayu-budianto/RiderProjects/ChatBotAI/ChatBotAI/bin/Debug/net8.0/CsvHelper.dll

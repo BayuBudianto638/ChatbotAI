@@ -1,3 +1,4 @@
+using System.Text.Json;
 using ChatBotAI.Models;
 
 namespace ChatBotAI.Services.ChatbotAppService;
@@ -82,47 +83,42 @@ public class ChatbotAppService : IChatbotAppService
             return $"Error: {response.StatusCode} - {response.Content}";
         }
     }
-
-    public async Task<List<Book>> ReadBooksFromFile(string filePath)
+    
+    public async Task<string> GetResponseFromWeaviate(string prompt)
     {
-        var books = new List<Book>();
-
-        if (!File.Exists(filePath))
+        var requestBody = new
         {
-            Console.WriteLine($"File not found: {filePath}");
-            return books;
-        }
-
-        var lines = File.ReadAllLines(filePath);
-        foreach (var line in lines.Skip(1))
-        {
-            string[] parts;
-
-            if (filePath.EndsWith(".csv"))
+            contents = new[]
             {
-                parts = line.Split(",");
-            }
-            else
-            {
-                parts = line.Split("|", StringSplitOptions.TrimEntries);
-            }
-
-            if (parts.Length == 8)
-            {
-                books.Add(new Book
+                new
                 {
-                    BookId = parts[0].Trim(),
-                    Title = parts[1].Trim(),
-                    Author = parts[2].Trim(),
-                    Year = int.Parse(parts[3].Trim()),
-                    Edition = parts[4].Trim(),
-                    Text = parts[5].Trim(),
-                    FileKey = parts[6].Trim(),
-                    ExternalCompanyId = parts[7].Trim()
-                });
+                    role = "user",
+                    parts = new[]
+                    {
+                        new { text = $"Based on the following information, answer the user's question:\n{prompt}" +
+                            $"\nQuestion: What is the title about? Provide a detailed explanation of the context and summarize the content. Do not repeat the title." }
+                    }
+                }
+            },
+            generationConfig = new
+            {
+                temperature = 1.2,
+                topK = 40,
+                topP = 0.95,
+                maxOutputTokens = 8192
             }
-        }
+        };
 
-        return books;
+        string jsonBody = JsonSerializer.Serialize(requestBody, new JsonSerializerOptions { WriteIndented = true });
+       
+        string apiUrl = $"{_apiUrl}?key={_apiKey}";
+        var client = new RestClient(apiUrl);
+        var request = new RestRequest("", Method.Post);
+        request.AddHeader("Content-Type", "application/json");
+        request.AddJsonBody(jsonBody);
+
+        var response = await client.ExecuteAsync(request);
+
+        return response.Content;
     }
 }

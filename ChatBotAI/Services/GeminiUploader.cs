@@ -16,7 +16,7 @@ public class GeminiUploader
         client.DefaultRequestHeaders.Add("Content-Type", "application/json");
     }
 
-    public async Task UploadBooksAsync(List<Book> books)
+    public async Task UploadBooksAsync(List<Article> books)
     {
         if (books.Count == 0)
         {
@@ -42,11 +42,13 @@ public class GeminiUploader
                 {
                     examples = new
                     {
+                        /*
                         examples = books.Select(book => new
                         {
                             text_input = $"Book ID: {book.BookId}, Title: {book.Title}, Author: {book.Author}, Year: {book.Year}, Edition: {book.Edition}, Text: {book.Text}, File Key: {book.FileKey}, External Company ID: {book.ExternalCompanyId}",
                             output = $"Metadata stored for book '{book.Title}' by {book.Author}."
                         }).ToArray()
+                        */
                     }
                 }
             }
